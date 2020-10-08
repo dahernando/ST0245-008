@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Oct  8 13:40:21 2020
-
-@author: daho
-"""
-
 class Node:
     
     def __init__(self,data,next=None):
@@ -45,14 +37,6 @@ class LinkedList:
             newNode = Node(element)
             newNode.next = self.head
             self.head = newNode
-        
-    def size(self):
-        current = self.head
-        counter = 0
-        while(current!=None):
-            current = current.next
-            counter+=1
-        return counter
             
     def insertByPosition(self, element, position):
         newNode = Node(element)
@@ -69,13 +53,6 @@ class LinkedList:
         else:
             print("invalided position")
         
-    def toPrint(self):
-        current = self.head
-        while(current.next!=None):
-            print(current.data,"->",end=" ")
-            current = current.next
-        print(current.data)
-        
     def reverse(self,changes):
         counter = 0
         current = self.head
@@ -89,6 +66,22 @@ class LinkedList:
             current.next = aux
             self.head = current
             counter+=1
+    
+    def toPrint(self):
+        current = self.head
+        while(current.next!=None):
+            print(current.data,"->",end=" ")
+            current = current.next
+        print(current.data)
+            
+    def size(self):
+        current = self.head
+        counter = 0
+        while(current!=None):
+            current = current.next
+            counter+=1
+        return counter
+            
 
 def main():
     myList = LinkedList()
