@@ -91,8 +91,10 @@ def main():
     myList.insertByTail(5)
     myList.insertByHead(3)
     myList.insertByHead(2)
+    print("list")
     myList.toPrint()
     myList.reverse(2)
+    print("List with changes")
     myList.toPrint()
     
 if __name__ =='__main__':
