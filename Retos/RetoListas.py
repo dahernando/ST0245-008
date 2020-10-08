@@ -89,7 +89,7 @@ def main():
     myList.insertByHead(3)
     myList.insertByHead(2)
     myList.toPrint()
-    myList.reverse(3)
+    myList.reverse(2)
     myList.toPrint()
     
 if __name__ =='__main__':
