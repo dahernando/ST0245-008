@@ -7,7 +7,10 @@ class Node:
 class LinkedList:
     
     def __init__(self,head=None):
-        self.head = head
+        if(head ==None):
+            self.head = head
+        else:
+            self.head = Node(head)
         
     def length(self):
         current = self.head
@@ -84,7 +87,7 @@ class LinkedList:
             
 
 def main():
-    myList = LinkedList()
+    myList = LinkedList(7)
     myList.insertByTail(5)
     myList.insertByHead(3)
     myList.insertByHead(2)
