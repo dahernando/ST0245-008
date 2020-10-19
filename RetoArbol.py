@@ -67,10 +67,7 @@ class arbol():
                 else:
                     return self.search(dato, a.right)
     
-    
-    #######################################################
-    
-    def minValueNode(self,node): 
+    def minValue(self,node): 
         self.current = node 
   
         while(self.current.left is not None): 
@@ -78,15 +75,15 @@ class arbol():
   
         return self.current
     
-    def deleteNode(self,a, value): 
+    def delete(self,a, value): 
         if a.dato is None: 
             return a  
         
         if value < a.dato: 
-            a.left = self.deleteNode(a.left, value) 
+            a.left = self.delete(a.left, value) 
   
         elif(value > a.dato): 
-            a.right = self.deleteNode(a.right, value) 
+            a.right = self.delete(a.right, value) 
   
         else: 
             if a.left is None : 
@@ -99,11 +96,11 @@ class arbol():
                 a = None
                 return temp 
                 
-            temp = self.minValueNode(a.right) 
+            temp = self.minValue(a.right) 
   
             a.dato = temp.dato 
   
-            a.right = self.deleteNode(a.right,temp.dato) 
+            a.right = self.delete(a.right,temp.dato) 
   
   
         return a  
@@ -149,7 +146,7 @@ while True:
             print("\nIngresa solo digitos...")        
     elif opc == '6':
         number= int(input("Ingrese el numero a elminar"))
-        tree.deleteNode(tree.root,number)
+        tree.delete(tree.root,number)
     elif opc == '7':
         print("\nElegiste salir...\n")
         os.system("pause")
